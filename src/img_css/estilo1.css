@@ -1,0 +1,32 @@
+.labels {
+    -fx-font-family: "Monotype Corsiva";
+    -fx-font-size: 72px;
+}
+
+.labels2 {
+    -fx-font-family: "Monotype Corsiva";
+    -fx-font-size: 34px;
+}
+
+.fondbox {
+    /*-fx-background-color: #336633;*/
+    -fx-background-image: url("fondo12.gif");
+    -fx-border-color: #000033;
+}
+
+.paneles {
+    -fx-border-color: #D00000;
+    -fx-background-color: #FFFFCC;
+    -fx-border-radius: 2px;
+}
+
+.botones {
+    -fx-background-color: #66CCCC;
+    -fx-border-color: #000;
+    -fx-border-radius: 2px;
+     
+}
+
+.fondoanchor {
+    -fx-background-image: url("fondo2.jpg");
+}

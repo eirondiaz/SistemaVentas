@@ -1,0 +1,178 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass, fondoanchor" xmlns:fx="http://javafx.com/fxml" fx:controller="screensframework.ProductoController">
+  <children>
+    <VBox layoutX="0.0" layoutY="0.0" prefHeight="600.0" prefWidth="800.0">
+      <children>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="fondbox" VBox.margin="$x1">
+          <children>
+            <Label prefWidth="368.0" styleClass="labels" text="Mi aplicación" textFill="WHITE">
+              <effect>
+                <Bloom />
+              </effect>
+              <font>
+                <Font size="17.0" />
+              </font>
+              <stylesheets>
+                <URL value="@../img_css/estilo1.css" />
+              </stylesheets>
+            </Label>
+            <ImageView fitHeight="76.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../img_css/logo-animado4.gif" preserveRatio="false" smooth="false" />
+              </image>
+              <HBox.margin>
+                <Insets fx:id="x1" />
+              </HBox.margin>
+            </ImageView>
+          </children>
+          <effect>
+            <InnerShadow />
+          </effect>
+          <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+          <stylesheets>
+            <URL value="@../img_css/estilo1.css" />
+          </stylesheets>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0" />
+        <HBox alignment="CENTER" prefHeight="419.0" prefWidth="800.0">
+          <children>
+            <Pane prefHeight="417.0" prefWidth="755.0" styleClass="paneles">
+              <children>
+                <MenuBar prefWidth="755.0">
+                  <menus>
+                    <Menu mnemonicParsing="false" text="Sistema">
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#irInicioContenido" text="Inicio" />
+                        <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+                        <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Mantenimiento">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="Producto" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Ayuda">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="A cerca de" />
+                      </items>
+                    </Menu>
+                  </menus>
+                </MenuBar>
+                <SplitPane dividerPositions="0.6697736351531292" focusTraversable="true" layoutX="0.0" layoutY="24.0" prefHeight="393.0000999999975" prefWidth="753.0">
+                  <items>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="160.0" prefWidth="100.0">
+                      <children>
+                        <TableView id="tablaProductos" fx:id="tablaProducto" layoutX="0.0" layoutY="71.0" onMouseClicked="#getProductoSeleccionado" prefHeight="321.0" prefWidth="501.0" />
+                        <TextField fx:id="tfBuscarProducto" layoutX="14.0" layoutY="20.0" prefWidth="200.0" promptText="Ingrese el producto a buscar" />
+                        <Button layoutX="222.0" layoutY="18.0" mnemonicParsing="false" onAction="#buscarProducto" styleClass="botones" text="Buscar" textFill="WHITE">
+                          <font>
+                            <Font name="System Bold" size="12.0" fx:id="x2" />
+                          </font>
+                          <stylesheets>
+                            <URL value="@../img_css/estilo1.css" />
+                          </stylesheets>
+                        </Button>
+                        <Hyperlink font="$x2" layoutX="356.0" layoutY="20.0" text="Vista de impresión" textOverrun="ELLIPSIS" />
+                      </children>
+                    </AnchorPane>
+                    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="392.0" prefWidth="249.0">
+                      <children>
+                        <Label layoutX="7.0" layoutY="77.0" text="Nombre" />
+                        <Label layoutX="7.0" layoutY="110.0" text="Precio" />
+                        <Label layoutX="7.0" layoutY="143.0" text="Categoria" />
+                        <TextField id="tfProductoNombre" fx:id="tfNombreProducto" layoutX="55.0" layoutY="74.0" prefWidth="178.0" />
+                        <TextField id="tfProductoPrecio" fx:id="tfPrecioProducto" layoutX="55.0" layoutY="107.0" prefWidth="178.0" />
+                        <ComboBox id="cbProductoCategoria" fx:id="cbCategoriaProducto" layoutX="70.0" layoutY="142.0" prefHeight="21.0" prefWidth="163.0" promptText="Seleccionar">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList" />
+                          </items>
+                        </ComboBox>
+                        <Label layoutX="7.0" layoutY="179.0" text="Marca" />
+                        <ComboBox id="cbProductoMarca" fx:id="cbMarcaProducto" layoutX="55.0" layoutY="178.0" prefHeight="21.0" prefWidth="178.0" promptText="Seleccionar">
+                          <items>
+                            <FXCollections fx:factory="observableArrayList" />
+                          </items>
+                        </ComboBox>
+                        <Button fx:id="btAddProducto" font="$x2" layoutX="21.0" layoutY="231.0" mnemonicParsing="false" onAction="#addProducto" prefWidth="203.0" styleClass="botones" text="Añadir" textFill="WHITE">
+                          <stylesheets>
+                            <URL value="@../img_css/estilo1.css" />
+                          </stylesheets>
+                        </Button>
+                        <Button fx:id="btModificarProducto" font="$x2" layoutX="21.0" layoutY="264.0" mnemonicParsing="false" onAction="#modificarProducto" prefWidth="203.0" styleClass="botones" text="Modificar" textFill="WHITE">
+                          <stylesheets>
+                            <URL value="@../img_css/estilo1.css" />
+                          </stylesheets>
+                        </Button>
+                        <Button fx:id="btEliminarProducto" font="$x2" layoutX="21.0" layoutY="299.0" mnemonicParsing="false" onAction="#eliminarProducto" prefWidth="203.0" styleClass="botones" text="Eliminar" textFill="WHITE">
+                          <stylesheets>
+                            <URL value="@../img_css/estilo1.css" />
+                          </stylesheets>
+                        </Button>
+                        <Button fx:id="btNuevoProducto" font="$x2" layoutX="21.0" layoutY="332.0" mnemonicParsing="false" onAction="#nuevoProducto" prefHeight="37.0" prefWidth="203.0" styleClass="botones" text="Nuevo" textFill="WHITE">
+                          <stylesheets>
+                            <URL value="@../img_css/estilo1.css" />
+                          </stylesheets>
+                        </Button>
+                        <Label layoutX="24.0" layoutY="14.0" prefWidth="191.0" text="Matenmiento de productos" textAlignment="LEFT">
+                          <font>
+                            <Font name="System Bold" size="14.0" fx:id="x3" />
+                          </font>
+                        </Label>
+                        <Label fx:id="lbCodigoProducto" font="$x3" layoutX="40.0" layoutY="40.0" prefHeight="24.0" prefWidth="141.0" text="" textFill="#cc0000" />
+                        <Label layoutX="7.0" layoutY="45.0" text="Cod:" />
+                      </children>
+                    </AnchorPane>
+                  </items>
+                </SplitPane>
+              </children>
+              <effect>
+                <InnerShadow />
+              </effect>
+              <stylesheets>
+                <URL value="@../img_css/estilo1.css" />
+              </stylesheets>
+            </Pane>
+          </children>
+          <VBox.margin>
+            <Insets fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="800.0" spacing="20.0">
+          <children>
+            <Hyperlink text="Prenferencias" />
+            <Hyperlink text="Ayuda" />
+            <Hyperlink onAction="#salir" text="Salir del sistema" />
+          </children>
+          <padding>
+            <Insets right="10.0" />
+          </padding>
+          <VBox.margin>
+            <Insets fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+      </children>
+      <stylesheets>
+        <URL value="@../img_css/estilo1.css" />
+      </stylesheets>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@../img_css/estilo1.css" />
+  </stylesheets>
+</AnchorPane>

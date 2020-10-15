@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="mainFxmlClass, fondoanchor" xmlns:fx="http://javafx.com/fxml" fx:controller="screensframework.ContenidoController">
+  <children>
+    <VBox prefHeight="600.0" prefWidth="800.0">
+      <children>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="fondbox" VBox.margin="$x1">
+          <children>
+            <Label prefWidth="368.0" styleClass="labels" text="Mi aplicación" textFill="WHITE">
+              <effect>
+                <Bloom />
+              </effect>
+              <font>
+                <Font size="17.0" />
+              </font>
+              <stylesheets>
+                <URL value="@../img_css/estilo1.css" />
+              </stylesheets>
+            </Label>
+            <ImageView fitHeight="76.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../img_css/logo-animado4.gif" preserveRatio="false" smooth="false" />
+              </image>
+              <HBox.margin>
+                <Insets fx:id="x1" />
+              </HBox.margin>
+            </ImageView>
+          </children>
+          <effect>
+            <InnerShadow />
+          </effect>
+          <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+          <stylesheets>
+            <URL value="@../img_css/estilo1.css" />
+          </stylesheets>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="25.0" prefWidth="200.0" />
+        <HBox alignment="CENTER" prefHeight="419.0" prefWidth="800.0">
+          <children>
+            <Pane prefHeight="417.0" prefWidth="755.0" styleClass="paneles">
+              <children>
+                <MenuBar prefWidth="755.0">
+                  <menus>
+                    <Menu mnemonicParsing="false" text="Sistema">
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#cerrarSesion" text="Cerrar sesión" />
+                        <MenuItem mnemonicParsing="false" onAction="#salir" text="Salir" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Mantenimiento">
+                      <items>
+                        <MenuItem mnemonicParsing="false" onAction="#irMantenimientoProducto" text="Producto" />
+                      </items>
+                    </Menu>
+                    <Menu mnemonicParsing="false" text="Ayuda">
+                      <items>
+                        <MenuItem mnemonicParsing="false" text="A cerca de" />
+                      </items>
+                    </Menu>
+                  </menus>
+                </MenuBar>
+              </children>
+              <effect>
+                <InnerShadow />
+              </effect>
+              <stylesheets>
+                <URL value="@../img_css/estilo1.css" />
+              </stylesheets>
+            </Pane>
+          </children>
+          <VBox.margin>
+            <Insets fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="800.0" spacing="20.0">
+          <children>
+            <Hyperlink text="Prenferencias" />
+            <Hyperlink text="Ayuda" />
+            <Hyperlink onAction="#salir" text="Salir del sistema" />
+          </children>
+          <padding>
+            <Insets right="10.0" />
+          </padding>
+          <VBox.margin>
+            <Insets fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+      </children>
+      <stylesheets>
+        <URL value="@../img_css/estilo1.css" />
+      </stylesheets>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@../img_css/estilo1.css" />
+  </stylesheets>
+</AnchorPane>

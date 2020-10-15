@@ -1,0 +1,131 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import java.net.*?>
+<?import java.util.*?>
+<?import javafx.collections.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" prefHeight="600.0" prefWidth="800.0" styleClass="fondoanchor" xmlns:fx="http://javafx.com/fxml" fx:controller="screensframework.RegistroController">
+  <children>
+    <VBox prefHeight="600.0" prefWidth="800.0">
+      <children>
+        <HBox prefHeight="100.0" prefWidth="200.0" spacing="20.0" styleClass="fondbox" VBox.margin="$x1">
+          <children>
+            <Label prefWidth="368.0" styleClass="labels" text="Mi aplicación" textFill="WHITE">
+              <effect>
+                <Bloom />
+              </effect>
+              <font>
+                <Font size="17.0" />
+              </font>
+              <stylesheets>
+                <URL value="@../img_css/estilo1.css" />
+              </stylesheets>
+            </Label>
+            <ImageView fitHeight="76.0" fitWidth="90.0" pickOnBounds="true" preserveRatio="true">
+              <image>
+                <Image url="@../img_css/logo-animado4.gif" preserveRatio="false" smooth="false" />
+              </image>
+              <HBox.margin>
+                <Insets fx:id="x1" />
+              </HBox.margin>
+            </ImageView>
+          </children>
+          <effect>
+            <InnerShadow />
+          </effect>
+          <padding>
+            <Insets bottom="20.0" left="20.0" right="20.0" top="20.0" />
+          </padding>
+          <stylesheets>
+            <URL value="@../img_css/estilo1.css" />
+          </stylesheets>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="50.0" prefWidth="200.0">
+          <children>
+            <Label prefWidth="129.0" styleClass="labels2" text="Regístrate">
+              <effect>
+                <Bloom />
+              </effect>
+              <stylesheets>
+                <URL value="@../img_css/estilo1.css" />
+              </stylesheets>
+            </Label>
+          </children>
+        </HBox>
+        <HBox alignment="CENTER" prefHeight="384.0" prefWidth="800.0">
+          <children>
+            <Pane prefHeight="382.0" prefWidth="458.0" styleClass="paneles">
+              <children>
+                <Label layoutX="61.0" layoutY="28.0" text="Usuario" />
+                <TextField fx:id="tfAddUser" layoutX="134.0" layoutY="25.0" prefWidth="250.0" promptText="Nombre de usuario del sistema" style="-fx-border-color: #3399CC" />
+                <Label layoutX="61.0" layoutY="72.0" text="Nombre" />
+                <TextField fx:id="tfAddNombre" layoutX="134.0" layoutY="69.0" prefWidth="250.0" promptText="Tu nombre real" style="-fx-border-color: #3399CC" />
+                <TextField fx:id="tfAddApellido" layoutX="134.0" layoutY="115.0" prefWidth="250.0" promptText="Ingresa tu apellido" style="-fx-border-color: #3399CC" />
+                <TextField fx:id="tfAddCorreo" layoutX="134.0" layoutY="199.0" prefWidth="250.0" promptText="Por ejemplo: example@hotmail.com" style="-fx-border-color: #3399CC" />
+                <Label layoutX="61.0" layoutY="118.0" prefWidth="50.0" text="Apellido" />
+                <Label layoutX="61.0" layoutY="162.0" prefWidth="28.0" text="Sexo" />
+                <ComboBox fx:id="cbAddsex" editable="false" layoutX="134.0" layoutY="159.0" prefHeight="21.0" prefWidth="90.0" promptText="Selecciona" />
+                <Label layoutX="61.0" layoutY="199.0" prefWidth="44.0" text="Correo" />
+                <Label layoutX="61.0" layoutY="247.0" text="Contraseña" />
+                <Label layoutX="61.0" layoutY="293.0" prefWidth="50.0" text="Repetir" />
+                <PasswordField fx:id="tfAddPass" layoutX="134.0" layoutY="241.0" prefWidth="250.0" promptText="Mas de 5 caracteres" style="-fx-border-color: #3399CC" />
+                <PasswordField fx:id="tfConfirmar" layoutX="134.0" layoutY="287.0" prefWidth="250.0" promptText="Debe ser igual a la de arriba" style="-fx-border-color: #3399CC" />
+                <Button layoutX="87.0" layoutY="330.0" mnemonicParsing="false" onAction="#registroUsuario" prefWidth="77.0" styleClass="botones" text="Registrar" textFill="WHITE">
+                  <stylesheets>
+                    <URL value="@../img_css/estilo1.css" />
+                  </stylesheets>
+                </Button>
+                <Button layoutX="201.0" layoutY="330.0" mnemonicParsing="false" onAction="#regresarPrincipal" prefWidth="77.0" styleClass="botones" text="Volver" textFill="WHITE">
+                  <stylesheets>
+                    <URL value="@../img_css/estilo1.css" />
+                  </stylesheets>
+                </Button>
+                <Button layoutX="309.0" layoutY="330.0" mnemonicParsing="false" onAction="#salir" prefWidth="77.0" styleClass="botones" text="Salir" textFill="WHITE">
+                  <stylesheets>
+                    <URL value="@../img_css/estilo1.css" />
+                  </stylesheets>
+                </Button>
+              </children>
+              <effect>
+                <InnerShadow />
+              </effect>
+              <stylesheets>
+                <URL value="@../img_css/estilo1.css" />
+              </stylesheets>
+            </Pane>
+          </children>
+          <VBox.margin>
+            <Insets fx:id="x1" />
+          </VBox.margin>
+        </HBox>
+        <HBox alignment="CENTER_RIGHT" prefHeight="39.0" prefWidth="800.0" spacing="20.0">
+          <children>
+            <Hyperlink text="Prenferencias" />
+            <Hyperlink text="Ayuda" />
+            <Hyperlink onAction="#regresarPrincipal" text="Volver" />
+          </children>
+          <padding>
+            <Insets right="10.0" />
+          </padding>
+          <VBox.margin>
+            <Insets top="10.0" />
+          </VBox.margin>
+        </HBox>
+      </children>
+      <stylesheets>
+        <URL value="@../img_css/estilo1.css" />
+      </stylesheets>
+    </VBox>
+  </children>
+  <stylesheets>
+    <URL value="@../img_css/estilo1.css" />
+  </stylesheets>
+</AnchorPane>
