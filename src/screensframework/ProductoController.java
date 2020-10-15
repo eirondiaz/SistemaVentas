@@ -333,7 +333,7 @@ public class ProductoController implements Initializable, ControlledScreen {
         
         int confirmarEliminar = JOptionPane.showConfirmDialog(null, "Realmente desea eliminar este producto??");
         
-        if (confirmarEliminar == 0) {
+        if (confirmarEliminar == JOptionPane.YES_OPTION) {
             try {
                 conexion = DBConnection.connect();
 
@@ -345,7 +345,7 @@ public class ProductoController implements Initializable, ControlledScreen {
                 
                 int n = estado.executeUpdate();
 
-                if (n > 0) {
+                if (n == 0) {
                     tablaProducto.getColumns().clear();
                     tablaProducto.getItems().clear();
                     cargarDatosTabla();
